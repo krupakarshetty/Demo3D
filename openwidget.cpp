@@ -1,4 +1,4 @@
-#include"openwidget.h"
+#include "openwidget.h"
 #include <QtOpenGL>
 #include <iostream>
 #include <QDebug>
@@ -52,14 +52,10 @@ void Openwidget::initializeGL()
 
 void Openwidget::mousePressEvent(QMouseEvent *event)
 {
-    //m_lastPos = event->pos();
-    //p1=QCursor::pos();
 
 
     dx=event->pos().x();
     dy=event->pos().y();
-    //dx=event->pos().x();
-    //dy=event->pos().y();
 
     if(event->button()== Qt::LeftButton)
     {
@@ -83,7 +79,7 @@ void Openwidget::mousePressEvent(QMouseEvent *event)
     label1->setText("Y:"+s1);
 
     //label->show();
-    label1->show();
+    //label1->show();
 }
 
 void Openwidget::mouseMoveEvent(QMouseEvent *event)
@@ -93,19 +89,18 @@ void Openwidget::mouseMoveEvent(QMouseEvent *event)
 }
 
 
-void Openwidget::resizeGL(int w, int h)
+/*void Openwidget::resizeGL(int w, int h)
 {
     int side = qMin(w, h);
     glViewport(width() - side / 2,height() - side / 2,600,600);
 }
-
+*/
 
 void Openwidget::paintGL()
 {
 
     if(count==1)
     {
-
 
     glPointSize(20);
     glBegin(GL_POINTS);

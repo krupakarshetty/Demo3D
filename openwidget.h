@@ -25,7 +25,7 @@ public:
 
 protected:
     void initializeGL() override;
-    void resizeGL(int width, int height) override;
+    //void resizeGL(int width, int height) override;
 
     void paintGL() override;
     QPoint m_lastPos;

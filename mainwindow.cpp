@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
      wid3->setVisible(false);
      wid4->setVisible(false);
 
-     _mV=false;
+
      setUpLayout();
      createMenus();
 }
@@ -34,6 +34,8 @@ void MainWindow::setUpLayout()
     //Verticle Layout
     QVBoxLayout *box=new QVBoxLayout;
     grid=new QGridLayout;
+
+
     //Horizontal Layout
     hLayout=new QHBoxLayout();
     hLayout->setSpacing(5);
@@ -49,6 +51,9 @@ void MainWindow::setUpLayout()
     //Right Side ToolBar
     rightTool=new QToolBar;
 
+
+
+    //adding widget to gridview
     grid->addWidget(wid1,0,0);
     grid->addWidget(wid2,0,1);
     grid->addWidget(wid3,1,0);
@@ -57,23 +62,20 @@ void MainWindow::setUpLayout()
 
 
 
-    //Center Layout
-    infoLabel=new QLabel;
-
-    //adding Left ToolBar
+    //adding Left ToolBar to horizontal Layout
     hLayout->addWidget(tool1,10);
 
 
-    //Adding Label to center
+    //Adding Grid Layout
     hLayout->addLayout(grid);
 
-    //adding RightToolBar
+    //placing rightTool bar to right side
     addToolBar(Qt::RightToolBarArea ,rightTool);
 
     //adding right toolbar
     hLayout->addWidget(rightTool);
 
-    //adding header to main Layout
+    //adding main Tool bar to main Layout
     box->addWidget(tool);
 
     //adding Horizontal Layout to MainLayout
@@ -99,6 +101,7 @@ void MainWindow::createMenus()
     fileMenu->addAction(New);
     connect(New,&QAction::triggered,this,&MainWindow::messageBox);
 
+    //Open
     auto openAct=new QAction(tr("&Open"),this);
     openAct->setShortcut(QKeySequence::Open);
     openAct->setStatusTip(tr("Open File"));
@@ -106,13 +109,14 @@ void MainWindow::createMenus()
     connect(openAct,&QAction::triggered,this,&MainWindow::messageBox);
 
 
+    //save
     auto saveAct=new QAction(tr("&Save"),this);
     saveAct->setShortcut(QKeySequence::Save);
     saveAct->setStatusTip("Save your File");
     fileMenu->addAction(saveAct);
     connect(saveAct,&QAction::triggered,this,&MainWindow::messageBox);
 
-
+    //exit
     auto exitAct=new QAction(tr("&Exit"));
     exitAct->setShortcut(QKeySequence::Quit);
     exitAct->setStatusTip("Exit");
@@ -127,6 +131,7 @@ void MainWindow::createMenus()
     undoAct->setStatusTip("Undo Your Work");
     editMenue->addAction(undoAct);
 
+    //redo
     auto redoAct=new QAction(tr("&Undo"));
     redoAct->setShortcut(QKeySequence::Redo);
     redoAct->setStatusTip("Redo Your Work");
@@ -139,6 +144,7 @@ void MainWindow::createMenus()
     misc=menuBar()->addMenu(tr("&Misc"));
     help=menuBar()->addMenu(tr("&Help"));
 
+    //adding toolbars
     verticleToolBar();
     horizontalToolBar();
 
@@ -257,37 +263,7 @@ void MainWindow::verticleToolBar()
 }
 
 
-void MainWindow::dummy()
-{
-    auto header=new QToolBar;
-    header->setOrientation(Qt::Vertical);
-    auto leftTool=new QToolBar;
-    leftTool->setOrientation(Qt::Vertical);
-    auto rightTool=new QToolBar;
-    auto h=new QHBoxLayout;
-    auto v=new QVBoxLayout;
 
-    h->addWidget(leftTool);
-
-    v->addWidget(rightTool);
-
-    addToolBar(Qt::RightToolBarArea ,header);
-
-    auto skewTwoAction=new QAction("Skew Two side",this);
-    leftTool->addAction(skewTwoAction);
-    rightTool->addAction(skewTwoAction);
-    header->addAction(skewTwoAction);
-    skewTwoAction->setIcon(QIcon::fromTheme(":/new/prefix1/C:/Users/USER/Desktop/Icons/skew.png"));
-
-
-    v->addLayout(h);
-
-    auto widget=new QWidget;
-    widget->setLayout(v);
-    setCentralWidget(widget);
-    widget->setStyleSheet("border: 1px solid black");
-
-}
 
 void MainWindow::messageBox()
 {
@@ -297,6 +273,8 @@ void MainWindow::messageBox()
 }
 
 
+
+//view port
 
 void MainWindow::oneGrid()
 {

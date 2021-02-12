@@ -21,8 +21,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     QHBoxLayout *hLayout;
     QVBoxLayout *vLayout;
-    QLabel *infoLabel;
-    QPushButton *button[10];
     QMenu *fileMenu;
     QMenu *editMenue;
     QMenu *viewMenu;
@@ -34,8 +32,7 @@ public:
     QToolBar *rightTool;
     QBoxLayout *rightVLayout;
     QGridLayout *grid;
-    bool _mV;
-    void dummy();
+
 
    // QGraphicsView *view;
     QGraphicsView *view1;
@@ -57,7 +54,7 @@ private:
     void fourGrid();
 
 
-    QOpenGLWidget *w1,*w2,*w3,*w4;
+
 
     Openwidget *wid1,*wid2,*wid3,*wid4;
 

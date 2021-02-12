@@ -12,6 +12,8 @@ Openwidget::Openwidget(QWidget *parent) :
 
 Openwidget::~Openwidget()
 {
+
+
 }
 
 static const char *vertexShaderSource =

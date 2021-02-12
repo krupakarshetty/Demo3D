@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>C:/Users/USER/Desktop/Icons/floppy-disk.png</file>
+        <file>C:/Users/USER/Desktop/Icons/add-file.png</file>
+        <file>C:/Users/USER/Desktop/Icons/mesh.png</file>
+        <file>C:/Users/USER/Desktop/Icons/open.png</file>
+        <file>C:/Users/USER/Desktop/Icons/rounded-rectangle.png</file>
+        <file>C:/Users/USER/Desktop/Icons/viewport.png</file>
+        <file>C:/Users/USER/Desktop/Icons/Bend.png</file>
+        <file>C:/Users/USER/Desktop/Icons/bendTwo.png</file>
+        <file>C:/Users/USER/Desktop/Icons/tampertwo.png</file>
+        <file>C:/Users/USER/Desktop/Icons/scaledtamper.png</file>
+        <file>C:/Users/USER/Desktop/Icons/scaledtampertwo.png</file>
+        <file>C:/Users/USER/Desktop/Icons/skew.png</file>
+        <file>C:/Users/USER/Desktop/Icons/skewTwo.png</file>
+    </qresource>
+</RCC>
